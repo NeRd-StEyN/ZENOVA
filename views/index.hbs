@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Hamburger Icon for Sidebar -->
+        <div id="hamburger" class="hamburger" onclick="toggleSidebar()" >
+            <i class="fa-solid fa-bars"></i>
+        </div>
+<div id="chat-container">
+
+
+
+</div> <!-- The container where chat messages will be added -->
+
+
+
+
+
+        <!-- Chat Input -->
+        
+    </div>
+    <div id="sidebar" action="/history" class="sidebar">
+        <h3>Chat History</h3>
+        <button id="clear-chats" style="position: absolute; right: 20px; top: 15px; background: none; border: none; color: white; cursor: pointer;">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+       
+        <button id="add-chat" style="position: absolute; right: 17px; top: 38px; background: none; border: none; color: white; cursor: pointer; font-size: 20px;">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        <ul id="chat-history">
+            
+            
+            <!-- Chat history items will be appended here -->
+        </ul>
+
+
+
+        
+    </div>
+<div class="dropdown">
+  <h2 id="zenovaButton">Zenova</h2>
+  <div class="dropdown-content" id="dropdownContent">
+
+    <a href="/about">About</a>
+    <a href="/logout">Logout</a>
+    <a href="/logoutall">Complete Logout</a>
+  </div>
+</div>
+
+  <div id="input">
+    <form action="">
+        <button class="toggle" id="moon" style="background:none;">
+    <i class="fa-solid fa-moon" style="color:black;"></i>
+</button>
+ <button class="toggle" id="sun"style="background:none;">
+<i class="fa-solid fa-sun"></i>
+</button>
+        <button id="scrollToBottom" class="scroll-button" style="background:none;">
+  <i class="fa-solid fa-arrow-down"></i>
+  
+</button>
+
+        <input type="text" placeholder="Ask Something..." id="text" required>
+       <div style="
+    color: rgb(255, 255, 255); 
+    font-size: 20px; 
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    left:3vw;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 50px; 
+   
+    {{!-- background-color: rgba(255, 255, 255, 0.8); /* Optional background for visibility */ --}}
+" id="q">
+    Zenova can make mistakes
+</div>
+
+
+    </form>
+
+    <button id="image" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">
+        <i class="fa-regular fa-image"></i> 
+        <input type="file" accept="images/*" hidden>
+        <br>
+        <img src="" class="i" style="width: 50px; height: 50px;">
+    </button>
+    <button id="sub" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">
+        <i class="fa-solid fa-paper-plane" id="play"></i>
+    </button>
+    <br>
+   
+</div>
+
+       
+
+    <!-- Sidebar for Chat History -->
+   
+    <script src="script.js"></script>
+</body>
+</html>

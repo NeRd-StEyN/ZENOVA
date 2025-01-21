@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Zenova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: #0d253f;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-family: 'Pacifico', cursive;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+
+        .about img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .about div {
+            width: 50%;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #0d253f;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Social Links Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: #0d253f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f76c6c;
+        }
+
+        /* Feedback Form Section */
+        .feedback-form {
+            margin-top: 60px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-form h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0d253f;
+        }
+
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: #0d253f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .feedback-form input[type="submit"]:hover {
+            background-color: #f76c6c;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zenova</h1>
+        <p>A Smart AI Chatbot for Real-time Conversations</p>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section class="about">
+            <div>
+                <h2>About Zenova</h2>
+                <p>Zenova is an advanced AI-powered chatbot designed to help users by providing real-time responses, information, and support. It is built using cutting-edge technologies, ensuring a smooth and efficient user experience. Whether you need assistance with tech-related queries or general knowledge, Zenova is here to assist you!</p>
+                <p>Our mission is to provide a seamless, engaging, and intelligent AI chatbot experience that makes it easier to interact with technology and improve daily tasks.</p>
+            </div>
+            <img src="ai.png" alt="Zenova Chatbot">
+        </section>
+
+        <!-- Social Links Section -->
+        <section class="social-links">
+            <a href="https://github.com/NeRd-StEyN" target="_blank">GitHub</a>
+            <a href="https://instagram.com/nipungupta2023" target="_blank">Instagram</a>
+            <a href="mailto:your-43nerd45@gmail.com">Contact</a>
+        </section>
+
+        <!-- Feedback Form Section -->
+        <section class="feedback-form">
+            <h3>We'd Love to Hear Your Thoughts!</h3>
+            <form action="/feedback" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="feedback" placeholder="Your Feedback" rows="5" required></textarea>
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </section>
+    </div>
+</body>
+</html>

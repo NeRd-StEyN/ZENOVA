@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        .chat-container {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(35, 58, 78);
+        }
+        
+        .chat-container h1 {
+            text-align: center;
+            padding-top: 5vh;
+            font-size: 10vh;
+            background: linear-gradient(to right, #ffffff, #64f8f8, #ff0000);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        
+        .chat-container h3 {
+            text-align: center;
+            padding-top: 5vh;
+            font-size: 5vh;
+            color: white;
+        }
+        
+        .chat-container h2 {
+            color: white;
+            padding: 10px;
+        }
+
+        /* Style for buttons */
+        .auth-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .auth-buttons button {
+            background-color: maroon;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.5vh;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+           
+
+        .auth-button  button {
+            background-color: maroon;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.5vh;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+       
+
+        /* Style for forms */
+        .auth-form {
+            display: none;
+            position: absolute;
+            top: 40vh;
+            right: 5%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 400px;
+            z-index: 1000;
+
+           
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .auth-form input {
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            font-size: 1.5vh;
+            border: none;
+            border-radius: 5px;
+            color:black;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+
+        .auth-form button {
+            background-color: maroon;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.5vh;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            position:relative;
+            left:10px;
+        }
+
+        .auth-form button:hover {
+            background-color: #800000;
+        }
+        img{
+            padding-left: 80vh;
+        }
+        #as{
+            display:flex;
+            justify-content: center;
+            gap:3vh;
+        }
+
+        #hello
+        {
+            display:none;
+       
+            height:25vw;
+        }
+        .h{
+                        position: relative;
+            right:30px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="welcome">
+            <h1>ZENOVA</h1>
+            <h1 id="h1"></h1>
+            <div id="as">
+<h3>To Meet AI Robot Click </h3>
+             <!-- Buttons for Login and Signup -->
+        <div class="auth-buttons">
+            <button id="helloget">Meet</button> 
+            </div>
+            </div>
+            
+     
+
+        </div>
+
+        <!-- Buttons for Login and Signup -->
+        <div class="auth-buttons">
+          
+            
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Sign Up</button>
+            
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <form action="/login" method="POST" id="form">
+                <input type="email" name="email" id="login-email" placeholder="Enter Email"  required>
+                <input type="password" name="password" id="login-password" placeholder="Enter Password" required>
+                <button type="submit" id="l">Login</button>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="auth-form">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="POST">
+            <h4 style="color:white; text-align:center; ">Email should be unique</h4>
+                <input type="text" name="name" id="signup-name" placeholder="Enter Name" required>
+                <input type="email" name="email"  id="signup-email" placeholder="Enter Email" required>
+                <input type="password" name="password" id="signup-password" placeholder="Enter Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <img id="hello" class="h" src="hello.gif"  >
+    </div>
+
+    <script>
+        // Get buttons and form elements
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const d=document.querySelector("#hello");
+        const a=document.querySelector("#helloget");
+        a.addEventListener("click",()=>
+        {
+           d.style.display="block";
+           d.classList.add("h");
+            document.querySelector("#as").style.display="none";
+
+        });
+
+        // Show Login form when Login button is clicked
+        loginBtn.addEventListener('click', () => {
+            document.querySelector("#login-email").value="";
+document.querySelector("#login-password").value="";
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+
+        // Show Signup form when Signup button is clicked
+        signupBtn.addEventListener('click', () => {
+            signupForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        });
+
+const text = "The Next Gen Vision AI";
+let index = 0;
+
+const h1 = document.querySelector("#h1");
+
+function add() {
+    if (index < text.length) {
+        h1.textContent += text[index];
+        index++;
+        setTimeout(add, 40); // Schedule the next character after 100ms
+    }
+}
+
+// Ensure the animation starts fresh on every page visit
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        h1.textContent = "";
+    d.style.display="none";
+          
+            document.querySelector("#as").style.display="flex";
+
+ loginForm.style.display = 'none';
+            index = 0; // Reset the index
+        add(); // Restart the animation
+    }
+});
+
+// Trigger animation on initial page load
+add();
+
+  
+
+
+    </script>
+</body>
+</html>
