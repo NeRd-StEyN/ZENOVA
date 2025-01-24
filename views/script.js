@@ -977,6 +977,7 @@ async function loadHistory() {
 
                 b1.addEventListener("click", async (e) => {
                     e.stopPropagation();
+                    boo=false;
 
                     try {
                         const idd = b1.dataset.id; // Get the history ID
