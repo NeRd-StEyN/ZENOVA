@@ -1,4 +1,8 @@
 // JavaScript for toggling the sidebar
+let loader = document.createElement("div");
+loader.classList.add("inner-circle");
+// Apply a filter to change appearance (optional)
+// loader.style.filter = "hue-rotate(220deg)"; 
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
 
@@ -165,6 +169,8 @@ function addUserMessage(message, i) {
 
     }
     how = true;
+    chatMessage.after(loader);
+    loader.style.display="block";
 
 
 
@@ -229,10 +235,13 @@ async function sendaimsg(message) {
 
 // Function to add a bot message
 function addBotMessage(message) {
+
     document.querySelector("#text").disabled = true;
+    loader.style.display="none";
     // Create chat message div for bot
     const chatMessage = document.createElement("div");
     chatMessage.classList.add("chat-message", "bot");
+
 
     // Create the bot chat bubble
     const botBubble = document.createElement("div");
@@ -308,6 +317,7 @@ function addBotMessage(message) {
 
     // Append the entire chat message to the container
     document.getElementById("chat-container").appendChild(chatMessage);
+  
 
     // Function to simulate typing animation
     let index = 0;
@@ -334,6 +344,7 @@ function addBotMessage(message) {
 
         }
         if (index < message.length && stop == 0) {
+            // loader.style.display="none";
             botText.textContent += message[index];
             chat.scrollTo({ top: chat.scrollHeight, behavior: "smooth" })
 
@@ -515,10 +526,12 @@ sun.addEventListener("click", (e) => {
     sun.style.display = "none";
     moon.style.display = "inline-block";
     body.style.color = "white";
+    loader.style.borderTopColor="black";
     icons.forEach(icon => {
         icon.style.color = 'black';
         q.style.color = "black";
         q.style.fontWeight = "bold";
+
         text.style.color = " black";
         text.style.backgroundColor = " rgb(143, 145, 147)";
         h3.style.color = "black";
@@ -575,6 +588,7 @@ moon.addEventListener("click", (e) => {
     });
     // alert("hello");
     text.style.color = " rgb(255, 255, 255)";
+    loader.style.borderTopColor="white";
     text.style.backgroundColor = " rgb(14, 15, 16)";
     text.style.border = " 5px solid rgba(255, 255, 255, 0.9)";
     q.style.color = "white";
@@ -620,6 +634,7 @@ moon.addEventListener("click", (e) => {
 
 // Event listener for the submit button to trigger response generation
 document.querySelector("#sub").addEventListener("click", () => {
+
     const userMessage = document.querySelector("#text").value;
     how = true;
     if (userMessage) {
@@ -633,7 +648,9 @@ document.querySelector("#sub").addEventListener("click", () => {
 
 // Handle enter key for response submission
 window.addEventListener("keydown", (e) => {
+
     if (e.key == "Enter") {
+        
         how = true;
         const userMessage = document.querySelector("#text").value;
         if (userMessage) {
@@ -825,7 +842,9 @@ async function sendMessage(message) {
                             // Get the maximum length of the two arrays
                             const maxLength = Math.max(userMessages.length, aiResponses.length);
                             tit = idd;
-                            console.log(tit);
+                            // console.log(tit);
+                           
+                            // alert('tit is +'+tit);
                             // Alternate between userMessages and aiResponses
                             for (let i = 0; i < maxLength; i++) {
                                 if (i < userMessages.length) {
@@ -1003,7 +1022,7 @@ async function loadHistory() {
                             const userMessages = chatData.userMessages; // User messages array
                             const aiResponses = chatData.aiResponses;  // AI responses array
                             tit = idd;
-                            console.log(tit);
+                            // alert('tit is +'+tit);
                             // Get the maximum length of the two arrays
                             const maxLength = Math.max(userMessages.length, aiResponses.length);
 
@@ -1072,64 +1091,3 @@ window.addEventListener('DOMContentLoaded', loadHistory);
 
 
 
-//     </style>
-// </head>
-// <body>
-
-//     <h1>Chat History</h1>
-//     <ul id="chat-history">
-//         <li class="history-item">
-//             <span class="history-title">Chat Title 1</span>
-//             <div class="options">
-//                 <button class="view-btn">View</button>
-//                 <button class="delete-btn">Delete</button>
-//             </div>
-//         </li>
-//         <li class="history-item">
-//             <span class="history-title">Chat Title 2</span>
-//             <div class="options">
-//                 <button class="view-btn">View</button>
-//                 <button class="delete-btn">Delete</button>
-//             </div>
-//         </li>
-//         <li class="history-item">
-//             <span class="history-title">Chat Title 3</span>
-//             <div class="options">
-//                 <button class="view-btn">View</button>
-//                 <button class="delete-btn">Delete</button>
-//             </div>
-//         </li>
-//     </ul>
-
-//     <script>
-//         // Function to handle view action
-//         function handleView(item) {
-//             alert('Viewing: ' + item);
-//         }
-
-//         // Function to handle delete action
-//         function handleDelete(item) {
-//             if (confirm('Are you sure you want to delete this chat?')) {
-//                 alert('Deleted: ' + item);
-//                 // You can also remove the item from the list
-//                 item.remove();
-//             }
-//         }
-
-//         // Add event listeners to each list item
-//         document.querySelectorAll('.history-item').forEach(item => {
-//             const viewButton = item.querySelector('.view-btn');
-//             const deleteButton = item.querySelector('.delete-btn');
-//             const title = item.querySelector('.history-title').textContent;
-
-//             // Handle view action
-//             viewButton.addEventListener('click', () => handleView(title));
-
-//             // Handle delete action
-//             deleteButton.addEventListener('click', () => handleDelete(item));
-//         });
-
-//     </script>
-
-// </body>
-// </html>
