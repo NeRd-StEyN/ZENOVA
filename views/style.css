@@ -489,3 +489,28 @@ body {
 .options button:hover {
     opacity: 0.5;
 }
+
+/* 
+
+/* Inner Circle */
+.inner-circle {
+    width: 60px;
+    height: 60px;
+    border: 8px solid transparent; /* Inner circle border */
+    border-top-color: #000402; 
+    border-radius: 50%; /* Inner circle shape */
+    animation: spin 0.5s linear infinite;
+    margin-left: 10vw; 
+    /* Reverse rotate animation */
+}
+
+/* Animations */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
