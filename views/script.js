@@ -496,7 +496,11 @@ async function generateResponse() {
                 console.error('No valid response text from API');
             }
         } catch (error) {
-            alert("Error in generating response");
+            
+         
+            addBotMessage("Error in generating response");
+            // alert("Error in generating response");
+
         }
     } else {
         console.error('No message or image data to send.');
